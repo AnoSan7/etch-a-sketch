@@ -1,6 +1,24 @@
-const n=50;
+const n=90;
+let col='black';
+colour=document.querySelector("#colour");
+reset=document.querySelector("#reset");
+submit=document.querySelector("#submit");
+submit.addEventListener("click",(e)=>{
+    if(colour.value==''){
+        col='black';
+    }
+    else{
+        col=colour.value;
+    }
+});
 let container=document.querySelector(".container");
-let wid=Math.floor(480/n);
+let wid=Math.floor(560/n);
+reset.addEventListener('click',(e)=>{
+    const cells=container.querySelectorAll('.cell');
+    cells.forEach(cell => {
+        cell.style.backgroundColor='';
+    });
+})
 for(let i=0;i<n;i++){
     let rows=document.createElement("div");
     rows.className="rows";
@@ -9,7 +27,7 @@ for(let i=0;i<n;i++){
         cell.className="cell";
         cell.style.width=`${wid}px`;
         cell.style.height=`${wid}px`;
-        cell.addEventListener("mouseover",(e)=>cell.style.backgroundColor="black");
+        cell.addEventListener("mouseover",(e)=>cell.style.backgroundColor=col);
         rows.appendChild(cell);
     }
     container.appendChild(rows);
