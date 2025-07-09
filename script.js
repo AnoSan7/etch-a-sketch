@@ -28,6 +28,19 @@ for(let i=0;i<n;i++){
         cell.style.width=`${wid}px`;
         cell.style.height=`${wid}px`;
         cell.addEventListener("mouseover",(e)=>cell.style.backgroundColor=col);
+        cell.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            cell.style.backgroundColor = col;
+        }, { passive: false });
+
+        cell.addEventListener("touchmove", (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const target = document.elementFromPoint(touch.clientX, touch.clientY);
+            if (target && target.classList.contains('cell')) {
+                target.style.backgroundColor = col;
+            }
+        }, { passive: false });
         rows.appendChild(cell);
     }
     container.appendChild(rows);
