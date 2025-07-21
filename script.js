@@ -32,7 +32,6 @@ for(let i=0;i<n;i++){
             e.preventDefault();
             cell.style.backgroundColor = col;
         }, { passive: false });
-
         cell.addEventListener("touchmove", (e) => {
             e.preventDefault();
             const touch = e.touches[0];
