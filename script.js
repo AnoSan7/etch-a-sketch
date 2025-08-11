@@ -25,9 +25,11 @@ for(let i=0;i<n;i++){
     for(let j=0;j<n;j++){
         let cell=document.createElement("div");
         cell.className="cell";
-        cell.style.width=`${wid}px`;
-        cell.style.height=`${wid}px`;
-        cell.addEventListener("mouseover",(e)=>cell.style.backgroundColor=col);
+        cell.addEventListener("mouseover",(e)=>{
+            if(e.buttons===1){
+                cell.style.backgroundColor=col;
+            }
+        });
         cell.addEventListener("touchstart", (e) => {
             e.preventDefault();
             cell.style.backgroundColor = col;
