@@ -18,6 +18,7 @@ reset.addEventListener('click',(e)=>{
     cells.forEach(cell => {
         cell.style.backgroundColor='';
     });
+    col='black';
 })
 for(let i=0;i<n;i++){
     let rows=document.createElement("div");
@@ -46,3 +47,7 @@ for(let i=0;i<n;i++){
     }
     container.appendChild(rows);
 }
+const eraser=document.querySelector("#eraser");
+eraser.addEventListener("click",(e)=>{
+    col='';
+});
