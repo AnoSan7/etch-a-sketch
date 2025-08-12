@@ -27,7 +27,7 @@ for(let i=0;i<n;i++){
         let cell=document.createElement("div");
         cell.className="cell";
         cell.addEventListener("mouseover",(e)=>{
-            if(e.buttons===1){
+            if(e.buttons===1 && istopmost===false) {
                 cell.style.backgroundColor=col;
             }
         });
@@ -51,3 +51,21 @@ const eraser=document.querySelector("#eraser");
 eraser.addEventListener("click",(e)=>{
     col='';
 });
+const topmost=document.querySelector("#topmost");
+topmost.addEventListener("click", (e) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+if(window.innerWidth>=600){
+    topmost.style.display='none';
+}
+else{
+    window.addEventListener("scroll", () => {
+        const contPos=container.getBoundingClientRect();
+        if(contPos.top<0){
+            topmost.style.display='block';
+        }
+        else{
+            topmost.style.display='none';
+        }
+    });
+}
