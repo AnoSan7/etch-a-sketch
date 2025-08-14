@@ -10,19 +10,24 @@
 </head>
 <body>
     <div class="main">
-        <div class="heading">
-            <h1>Etch-a-sketch</h1>
+        <div class="content">
+            <div class="heading">
+                <h1>Etch-a-sketch</h1>
+            </div>
+            <div class="options">
+                <label for="colour">Enter color:</label>
+                <input type="text" name="colour" id="colour">
+                <button id="submit">Enter</button>
+                <button id="eraser">Eraser</button>
+                <br><br>
+                <button id="reset">Reset</button>
+            </div>
+            <div class="container"></div>
+            <button id="topmost"></button>
         </div>
-        <div class="options">
-            <label for="colour">Enter color:</label>
-            <input type="text" name="colour" id="colour">
-            <button id="submit">Enter</button>
-            <button id="eraser">Eraser</button>
-            <br><br>
-            <button id="reset">Reset</button>
+        <div class="scroller">
+            <div class="bar"></div>
         </div>
-        <div class="container"></div>
     </div>
-    <button id="topmost"></button>
 </body>
 </html>
